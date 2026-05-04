@@ -1,25 +1,265 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - Mi App</title>
+    <title>Privacy Policy - Dormio</title>
     <style>
-        body { font-family: Arial, sans-serif; max-width: 800px; margin: 40px auto; padding: 20px; line-height: 1.6; }
-        h1 { color: #333; }
+        :root {
+            --brand: #4A90D9;
+            --bg: #f9fafb;
+            --card: #ffffff;
+            --text: #1f2937;
+            --text-muted: #6b7280;
+            --border: #e5e7eb;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 20px;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-icon {
+            width: 32px;
+            height: 32px;
+            background-color: var(--brand);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .app-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text);
+            margin: 0;
+        }
+
+        .lang-switcher select {
+            padding: 8px 12px;
+            border-radius: 6px;
+            border: 1px solid var(--border);
+            background-color: white;
+            font-size: 0.9rem;
+            cursor: pointer;
+        }
+
+        .policy-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        h1 { font-size: 2rem; margin-top: 0; color: var(--text); }
+        h2 { font-size: 1.25rem; margin-top: 2rem; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 8px; }
+        p { margin-bottom: 1rem; }
+        
+        .last-updated {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-box {
+            background-color: #f3f4f6;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+
+        .lang-content {
+            display: none;
+        }
+
+        .lang-content.active {
+            display: block;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 600px) {
+            .policy-card { padding: 20px; }
+            header { flex-direction: column; gap: 20px; align-items: flex-start; }
+        }
     </style>
 </head>
 <body>
-    <h1>Privacy Policy</h1>
-    <p><strong>Last updated:</strong> May 2026</p>
-    
-    <h2>1. Information We Collect</h2>
-    <p>We collect minimal data necessary to provide the app functionality...</p>
-    
-    <h2>2. How We Use Your Information</h2>
-    <p>...</p>
-    
-    <h2>3. Contact Us</h2>
-    <p>If you have any questions about this Privacy Policy, please contact us at: <strong>soporte.tunombreapp@gmail.com</strong></p>
+
+<div class="container">
+    <header>
+        <div class="logo-area">
+            <div class="logo-icon">D</div>
+            <h1 class="app-name">Dormio</h1>
+        </div>
+        <div class="lang-switcher">
+            <select id="langSelect" onchange="changeLanguage()">
+                <option value="en">English</option>
+                <option value="es">Español</option>
+                <option value="pt">Português</option>
+            </select>
+        </div>
+    </header>
+
+    <div class="policy-card">
+        
+        <!-- ENGLISH -->
+        <div id="en" class="lang-content active">
+            <h1>Privacy Policy</h1>
+            <p class="last-updated">Last updated: May 3, 2026</p>
+            
+            <p>Dormio is a sleep and snore recorder built on a single principle: <strong>your data never leaves your device.</strong> This policy explains what we collect, what we don't, and why.</p>
+
+            <h2>1. What We Collect</h2>
+            <p><strong>Nothing.</strong> Dormio does not collect, store, transmit, or share any personal data.</p>
+            <p>All audio recordings, snore detection results, and sleep scores are processed entirely on your device and stored only in the app's private sandbox. No information is sent to any server operated by the developer or any third party.</p>
+
+            <h2>2. Microphone Access</h2>
+            <p>Dormio requests access to your microphone solely to record audio while you sleep to detect snoring. Audio is processed locally on your device using on-device signal processing. Raw audio is never transmitted anywhere.</p>
+
+            <h2>3. In-App Purchases</h2>
+            <p>Dormio offers a one-time purchase to unlock unlimited recordings. Purchase transactions are processed by Apple (App Store) or Google (Google Play) through their respective billing systems.</p>
+            <p>Purchase validation is handled by <strong>RevenueCat</strong>, a third-party service, solely to confirm whether your purchase is valid. RevenueCat may process a device identifier for this purpose. You can view their policy at <a href="https://www.revenuecat.com/privacy" target="_blank">revenuecat.com/privacy</a>. This is the only network communication the app makes.</p>
+
+            <h2>4. Data Deletion</h2>
+            <p>Uninstalling Dormio permanently deletes all recordings, scores, and app data from your device. There is no server-side copy. Deletion is final and complete. You can also delete all data from within the app settings.</p>
+
+            <h2>5. Children's Privacy</h2>
+            <p>Dormio does not knowingly collect any information from anyone, including children under the age of 13 (or higher as required by local law).</p>
+
+            <div class="contact-box">
+                <h2>Contact Us</h2>
+                <p>If you have questions about this policy, please contact us at:</p>
+                <p><strong>[PLACEHOLDER@EMAIL.COM]</strong></p>
+            </div>
+        </div>
+
+        <!-- ESPAÑOL -->
+        <div id="es" class="lang-content">
+            <h1>Política de Privacidad</h1>
+            <p class="last-updated">Última actualización: 3 de mayo de 2026</p>
+            
+            <p>Dormio es una grabadora de sueño y ronquidos construida sobre un principio único: <strong>sus datos nunca salen de su dispositivo.</strong> Esta política explica lo que recopilamos, lo que no y por qué.</p>
+
+            <h2>1. Qué recopilamos</h2>
+            <p><strong>Nada.</strong> Dormio no recopila, almacena, transmite ni comparte ningún dato personal.</p>
+            <p>Todas las grabaciones de audio, los resultados de detección de ronquidos y los puntajes de sueño se procesan íntegramente en su dispositivo y se almacenan solo en el entorno privado de la aplicación. No se envía información a ningún servidor operado por el desarrollador ni por terceros.</p>
+
+            <h2>2. Acceso al micrófono</h2>
+            <p>Dormio solicita acceso a su micrófono únicamente para grabar audio mientras duerme para detectar ronquidos. El audio se procesa localmente en su dispositivo mediante procesamiento de señales en el dispositivo. El audio original nunca se transmite a ninguna parte.</p>
+
+            <h2>3. Compras integradas</h2>
+            <p>Dormio ofrece una compra única para desbloquear grabaciones ilimitadas. Las transacciones de compra son procesadas por Apple (App Store) o Google (Google Play) a través de sus respectivos sistemas de facturación.</p>
+            <p>La validación de la compra es gestionada por <strong>RevenueCat</strong>, un servicio de terceros, únicamente para confirmar si su compra es válida. RevenueCat puede procesar un identificador de dispositivo para este fin. Puede ver su política en <a href="https://www.revenuecat.com/privacy" target="_blank">revenuecat.com/privacy</a>. Esta es la única comunicación de red que realiza la aplicación.</p>
+
+            <h2>4. Eliminación de datos</h2>
+            <p>Desinstalar Dormio elimina permanentemente todas las grabaciones, puntajes y datos de la aplicación de su dispositivo. No hay una copia en el servidor. La eliminación es definitiva y completa. También puede eliminar todos los datos desde los ajustes de la aplicación.</p>
+
+            <h2>5. Privacidad de los niños</h2>
+            <p>Dormio no recopila deliberadamente ninguna información de ninguna persona, incluidos niños menores de 13 años (o más según lo exija la legislación local).</p>
+
+            <div class="contact-box">
+                <h2>Contáctenos</h2>
+                <p>Si tiene preguntas sobre esta política, contáctenos en:</p>
+                <p><strong>[PLACEHOLDER@EMAIL.COM]</strong></p>
+            </div>
+        </div>
+
+        <!-- PORTUGUÊS -->
+        <div id="pt" class="lang-content">
+            <h1>Política de Privacidade</h1>
+            <p class="last-updated">Última atualização: 3 de maio de 2026</p>
+            
+            <p>O Dormio é um gravador de sono e ronco construído sobre um princípio único: <strong>seus dados nunca saem do seu dispositivo.</strong> Esta política explica o que coletamos, o que não coletamos e o porquê.</p>
+
+            <h2>1. O Que Coletamos</h2>
+            <p><strong>Nada.</strong> O Dormio não coleta, armazena, transmite ou compartilha quaisquer dados pessoais.</p>
+            <p>Todas as gravações de áudio, resultados de detecção de ronco e pontuações de sono são processados inteiramente no seu dispositivo e armazenados apenas no sandbox privado do aplicativo. Nenhuma informação é enviada para qualquer servidor operado pelo desenvolvedor ou por terceiros.</p>
+
+            <h2>2. Acesso ao Microfone</h2>
+            <p>O Dormio solicita acesso ao seu microfone exclusivamente para gravar áudio enquanto você dorme para detectar roncos. O áudio é processado localmente no seu dispositivo usando processamento de sinal no dispositivo. O áudio bruto nunca é transmitido para lugar nenhum.</p>
+
+            <h2>3. Compras no Aplicativo</h2>
+            <p>O Dormio oferece uma compra única para desbloquear gravações ilimitadas. As transações de compra são processadas pela Apple (App Store) ou Google (Google Play) através de seus respectivos sistemas de faturamento.</p>
+            <p>A validação da compra é gerenciada pela <strong>RevenueCat</strong>, um serviço de terceiros, exclusivamente para confirmar se sua compra é válida. O RevenueCat pode processar um identificador de dispositivo para esse fim. Você pode ver a política deles em <a href="https://www.revenuecat.com/privacy" target="_blank">revenuecat.com/privacy</a>. Esta é a única comunicação de rede que o aplicativo faz.</p>
+
+            <h2>4. Exclusão de Dados</h2>
+            <p>A desinstalação do Dormio exclui permanentemente todas as gravações, pontuações e dados do aplicativo do seu dispositivo. Não há cópia no servidor. A exclusão é final e completa. Você também pode excluir todos os dados nas configurações do aplicativo.</p>
+
+            <h2>5. Privacidade das Crianças</h2>
+            <p>O Dormio não coleta conscientemente qualquer informação de ninguém, incluindo crianças menores de 13 anos (ou mais, conforme exigido pela lei local).</p>
+
+            <div class="contact-box">
+                <h2>Contato</h2>
+                <p>Se você tiver dúvidas sobre esta política, entre em contato conosco em:</p>
+                <p><strong>[PLACEHOLDER@EMAIL.COM]</strong></p>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Dormio. All rights reserved.</p>
+    </footer>
+</div>
+
+<script>
+    function changeLanguage() {
+        const select = document.getElementById('langSelect');
+        const lang = select.value;
+        
+        // Hide all
+        const contents = document.querySelectorAll('.lang-content');
+        contents.forEach(content => {
+            content.classList.remove('active');
+        });
+        
+        // Show selected
+        document.getElementById(lang).classList.add('active');
+        
+        // Update document title for SEO
+        const titles = {
+            'en': 'Privacy Policy - Dormio',
+            'es': 'Política de Privacidad - Dormio',
+            'pt': 'Política de Privacidade - Dormio'
+        };
+        document.title = titles[lang];
+    }
+</script>
+
 </body>
 </html>
